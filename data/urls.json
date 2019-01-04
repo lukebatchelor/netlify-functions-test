@@ -1,4 +1,4 @@
 {
-  "foo": { "url": "https://google.com" },
-  "bar": { "url": "https://atlassian.com " }
+  "foo": "https://google.com",
+  "bar": "https://atlassian.com"
 }

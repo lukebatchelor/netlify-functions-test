@@ -8,6 +8,11 @@
     "netlify-lambda": "^1.1.1"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && cp src/index.html dist/ && cp -r data/ dist/data"
+    "build": "yarn clean && mkdir dist && cp src/index.html dist/ && yarn write-redirects",
+    "write-redirects": "node write-redirects",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0"
   }
 }

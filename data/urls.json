@@ -1,1 +1,4 @@
-[{ "foo": { "url": "https://google.com" } }]
+[
+  { "foo": { "url": "https://google.com" } },
+  { "bar": { "url": "https://atlassian.com " } }
+]

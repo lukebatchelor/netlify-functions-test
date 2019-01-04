@@ -5,6 +5,7 @@ exports.handler = function(event, context, callback) {
   const data_path = process.env.data_path;
   const secret = process.env.secret || "No secret found";
   const now = new Date().toString();
+  console.log(JSON.stringify(event, null, 2));
   const [, requestedShortUrl] = event.path.match(/get\/(.+?)$/);
   if (!requestedShortUrl) {
     return callback(null, {

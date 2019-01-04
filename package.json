@@ -4,13 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "http-server": "^0.11.1",
     "netlify-cli": "^2.6.0",
     "netlify-lambda": "^1.1.1"
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "yarn clean && mkdir dist && cp src/index.html dist/ && yarn write-redirects",
     "write-redirects": "node write-redirects",
-    "clean": "rm -rf dist"
+    "dev:frontend": "yarn clean && mkdir dist && nodemon --watch src/index.html --exec 'cp src/index.html dist/ && http-server -c-1 -P http://localhost:9000' dist/",
+    "dev:backend": "netlify-lambda serve src/functions"
   },
   "dependencies": {
     "node-fetch": "^2.3.0"
